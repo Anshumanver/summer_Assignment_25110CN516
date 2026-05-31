@@ -1,3 +1,5 @@
+// Write a program to print Armstrong numbers in a range .
+
 #include <stdio.h>
 #include <math.h>
 

@@ -1,5 +1,6 @@
-#include <stdio.h>
+//Write a program to check Armstrong number.
 
+#include <stdio.h>
 int main() {
     int num, originalNum, remainder;
     int result = 0;

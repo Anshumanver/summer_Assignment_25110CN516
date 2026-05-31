@@ -1,5 +1,6 @@
-#include <stdio.h>
+ //Write a program to find GCD of two numbers .
 
+#include <stdio.h>
 int main() {
     int a, b, temp;
 

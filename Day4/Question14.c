@@ -1,5 +1,6 @@
-#include <stdio.h>
+//Write a program to find nthFibonacci term.
 
+#include <stdio.h>
 int fibonacci(int n) {
     if (n <= 1)
         return n;
