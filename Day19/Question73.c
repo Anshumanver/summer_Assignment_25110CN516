@@ -1,61 +1,40 @@
-//Write a program to multiply matrices.
+//Write a program to add matrices.
 
 #include <stdio.h>
 
 int main() {
-    int r1, c1, r2, c2;
-    int a[10][10], b[10][10], result[10][10];
-    int i, j, k;
+    int rows, cols;
 
-    printf("Enter rows and columns of first matrix: ");
-    scanf("%d %d", &r1, &c1);
+    printf("Enter number of rows and columns: ");
+    scanf("%d %d", &rows, &cols);
 
-    printf("Enter rows and columns of second matrix: ");
-    scanf("%d %d", &r2, &c2);
+    int A[10][10], B[10][10], Sum[10][10];
 
-    // Check if multiplication is possible
-    if (c1 != r2) {
-        printf("Matrix multiplication is not possible.\n");
-        return 0;
-    }
-
-    // Input first matrix
     printf("Enter elements of first matrix:\n");
-    for (i = 0; i < r1; i++) {
-        for (j = 0; j < c1; j++) {
-            scanf("%d", &a[i][j]);
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            scanf("%d", &A[i][j]);
         }
     }
 
-    // Input second matrix
     printf("Enter elements of second matrix:\n");
-    for (i = 0; i < r2; i++) {
-        for (j = 0; j < c2; j++) {
-            scanf("%d", &b[i][j]);
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            scanf("%d", &B[i][j]);
         }
     }
 
-    // Initialize result matrix
-    for (i = 0; i < r1; i++) {
-        for (j = 0; j < c2; j++) {
-            result[i][j] = 0;
+    // Add matrices
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            Sum[i][j] = A[i][j] + B[i][j];
         }
     }
 
-    // Matrix multiplication
-    for (i = 0; i < r1; i++) {
-        for (j = 0; j < c2; j++) {
-            for (k = 0; k < c1; k++) {
-                result[i][j] += a[i][k] * b[k][j];
-            }
-        }
-    }
-
-    // Display result
-    printf("Resultant Matrix:\n");
-    for (i = 0; i < r1; i++) {
-        for (j = 0; j < c2; j++) {
-            printf("%d\t", result[i][j]);
+    printf("Sum of the matrices:\n");
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            printf("%d ", Sum[i][j]);
         }
         printf("\n");
     }

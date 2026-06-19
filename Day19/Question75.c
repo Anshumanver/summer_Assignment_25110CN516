@@ -1,28 +1,35 @@
-//Write a program to find row-wise sum.
+//Write a program to transpose matrix.
 
 #include <stdio.h>
 
 int main() {
-    int a[10][10], rows, cols;
-    int i, j, sum;
+    int rows, cols;
 
     printf("Enter number of rows and columns: ");
     scanf("%d %d", &rows, &cols);
 
-    printf("Enter matrix elements:\n");
-    for(i = 0; i < rows; i++) {
-        for(j = 0; j < cols; j++) {
-            scanf("%d", &a[i][j]);
+    int A[10][10], T[10][10];
+
+    printf("Enter elements of the matrix:\n");
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            scanf("%d", &A[i][j]);
         }
     }
 
-    printf("\nRow-wise Sum:\n");
-    for(i = 0; i < rows; i++) {
-        sum = 0;
-        for(j = 0; j < cols; j++) {
-            sum += a[i][j];
+    // Find transpose
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            T[j][i] = A[i][j];
         }
-        printf("Sum of Row %d = %d\n", i + 1, sum);
+    }
+
+    printf("Transpose of the matrix:\n");
+    for (int i = 0; i < cols; i++) {
+        for (int j = 0; j < rows; j++) {
+            printf("%d ", T[i][j]);
+        }
+        printf("\n");
     }
 
     return 0;

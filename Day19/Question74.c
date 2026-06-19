@@ -1,36 +1,43 @@
-//Write a program to check symmetric matrix.
+//Write a program to subtract matrices.
 
 #include <stdio.h>
 
 int main() {
-    int n, i, j;
-    int a[10][10];
-    int symmetric = 1;
+    int rows, cols;
 
-    printf("Enter the order of square matrix: ");
-    scanf("%d", &n);
+    printf("Enter number of rows and columns: ");
+    scanf("%d %d", &rows, &cols);
 
-    printf("Enter the elements of the matrix:\n");
-    for(i = 0; i < n; i++) {
-        for(j = 0; j < n; j++) {
-            scanf("%d", &a[i][j]);
+    int A[10][10], B[10][10], Diff[10][10];
+
+    printf("Enter elements of first matrix:\n");
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            scanf("%d", &A[i][j]);
         }
     }
 
-    // Check for symmetry
-    for(i = 0; i < n; i++) {
-        for(j = 0; j < n; j++) {
-            if(a[i][j] != a[j][i]) {
-                symmetric = 0;
-                break;
-            }
+    printf("Enter elements of second matrix:\n");
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            scanf("%d", &B[i][j]);
         }
     }
 
-    if(symmetric)
-        printf("The matrix is Symmetric.\n");
-    else
-        printf("The matrix is Not Symmetric.\n");
+    // Subtract matrices
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            Diff[i][j] = A[i][j] - B[i][j];
+        }
+    }
+
+    printf("Difference of the matrices:\n");
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            printf("%d ", Diff[i][j]);
+        }
+        printf("\n");
+    }
 
     return 0;
 }
